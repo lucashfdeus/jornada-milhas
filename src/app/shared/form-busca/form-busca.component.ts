@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./form-busca.component.scss']
 })
 export class FormBuscaComponent {
-  constructor(public formBuscaService : FormBuscaService) {}
+  constructor(public formBuscaService: FormBuscaService) { }
+
+  buscar(){
+    console.log(this.formBuscaService.formBusca.value)
+  }
+
 }
