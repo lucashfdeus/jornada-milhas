@@ -1,0 +1,8 @@
+{
+    "prettier.trailingComma": "all",
+    "editor.formatOnSave": true,
+    "notebook.formatOnSave.enabled": true,
+    "prettier.jsxSingleQuote": true,
+    "prettier.singleQuote": true,
+    "yaml.format.singleQuote": false
+}
