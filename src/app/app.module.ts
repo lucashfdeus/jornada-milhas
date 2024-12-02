@@ -18,7 +18,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatRadioModule  } from '@angular/material/radio';
+import { MatRadioModule } from '@angular/material/radio';
+import { MatTreeModule } from '@angular/material/tree';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,6 +43,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { FormBaseComponent } from './shared/form-base/form-base.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { TreeComponent } from './pages/tree/tree.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +66,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     LoginComponent,
     FormBaseComponent,
     CadastroComponent,
-    PerfilComponent
+    PerfilComponent,
+    TreeComponent
   ],
   imports: [
     BrowserModule,
@@ -87,8 +90,8 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
     MatRadioModule,
     MatDividerModule,
     MatCheckboxModule,
-
-    ],
+    MatTreeModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

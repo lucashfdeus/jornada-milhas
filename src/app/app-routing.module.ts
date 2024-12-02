@@ -4,6 +4,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
+import { TreeComponent } from './pages/tree/tree.component';
 
 const routes: Routes = [
   {
@@ -22,10 +23,14 @@ const routes: Routes = [
     path: 'perfil',
     component: PerfilComponent,
   },
+  {
+    path: 'tree',
+    component: TreeComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
 })
-export class AppRoutingModule {}
+export class AppRoutingModule { }

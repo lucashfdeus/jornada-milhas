@@ -1,3 +1,18 @@
+// Definindo a interface Person
+export interface Person {
+  id: number;
+  name: string;
+  relationship: string;
+  children?: Person[];  // Pessoa pode ter filhos
+}
+
+// PersonNode extendido de Person com propriedades adicionais
+export interface PersonNode extends Person {
+  level: number; // Garantindo que 'level' seja um número
+  children?: PersonNode[];
+}
+
+
 export interface Promocao {
   id: number
   destino: string
