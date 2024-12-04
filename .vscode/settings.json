@@ -4,5 +4,13 @@
     "notebook.formatOnSave.enabled": true,
     "prettier.jsxSingleQuote": true,
     "prettier.singleQuote": true,
-    "yaml.format.singleQuote": false
+    "yaml.format.singleQuote": false,
+    "editor.quickSuggestionsDelay": 0,
+    "javascript.format.semicolons": "insert",
+    "typescript.format.semicolons": "insert",
+    "diffEditor.codeLens": true,
+    "editor.cursorBlinking": "blink",
+    "editor.cursorSmoothCaretAnimation": "off",
+    "editor.cursorStyle": "line",
+    "editor.cursorSurroundingLines": 0
 }

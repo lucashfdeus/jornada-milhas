@@ -26,11 +26,12 @@ export class FormBaseComponent implements OnInit {
   @Input() textoBotao: string = 'CADASTRAR';
 
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>();
+  @Output() sair: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(
     private formBuilder: FormBuilder,
     private formularioService: FormularioService
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.cadastroForm = this.formBuilder.group({
@@ -76,10 +77,20 @@ export class FormBaseComponent implements OnInit {
       aceitarTermos: [true, [Validators.requiredTrue]],
     });
 
+    this.perfilComponent
+      ? this.cadastroForm.get('aceitarTermos')?.setValidators(null)
+      : this.cadastroForm.get('aceitarTermos')?.setValidators([Validators.required])
+
+    this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity();
+
     this.formularioService.setCadastro(this.cadastroForm);
   }
 
   executarAcao() {
     this.acaoClique.emit();
+  }
+
+  deslogar() {
+    this.sair.emit();
   }
 }
