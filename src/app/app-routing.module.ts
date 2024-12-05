@@ -5,6 +5,9 @@ import { LoginComponent } from './pages/login/login.component';
 import { CadastroComponent } from './pages/cadastro/cadastro.component';
 import { PerfilComponent } from './pages/perfil/perfil.component';
 import { TreeComponent } from './pages/tree/tree.component';
+//import { authGuard } from './core/guards/auth.guard'; uso do guard como classe.
+import { AuthGuard } from './core/guards/auth.guard';
+
 
 const routes: Routes = [
   {
@@ -22,6 +25,7 @@ const routes: Routes = [
   {
     path: 'perfil',
     component: PerfilComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'tree',
