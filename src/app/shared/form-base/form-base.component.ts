@@ -35,7 +35,7 @@ export class FormBaseComponent implements OnInit {
 
   ngOnInit(): void {
     this.cadastroForm = this.formBuilder.group({
-      nome: ['Lucas Teste', Validators.required],
+      nome: ['Lucas Teste sem api', Validators.required],
       nascimento: [null, [Validators.required]],
       cpf: ['12312312123', [Validators.required]],
       cidade: ['City', Validators.required],
@@ -79,7 +79,7 @@ export class FormBaseComponent implements OnInit {
 
     this.perfilComponent
       ? this.cadastroForm.get('aceitarTermos')?.setValidators(null)
-      : this.cadastroForm.get('aceitarTermos')?.setValidators([Validators.required])
+      : this.cadastroForm.get('aceitarTermos')?.setValidators([Validators.required]);
 
     this.cadastroForm.get('aceitarTermos')?.updateValueAndValidity();
 

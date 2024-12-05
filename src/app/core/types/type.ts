@@ -14,10 +14,10 @@ export interface PersonNode extends Person {
 
 
 export interface Promocao {
-  id: number
-  destino: string
-  imagem: string
-  preco: number
+  id: number;
+  destino: string;
+  imagem: string;
+  preco: number;
 }
 
 export interface UnidadeFederativa {
@@ -37,6 +37,7 @@ export interface PessoaUsuaria {
   nome: string;
   nascimento: string;
   cpf: string;
+  genero: string;
   telefone: string;
   email: string;
   senha: string;
