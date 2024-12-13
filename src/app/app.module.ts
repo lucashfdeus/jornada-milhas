@@ -46,6 +46,7 @@ import { PerfilComponent } from './pages/perfil/perfil.component';
 import { TreeComponent } from './pages/tree/tree.component';
 import { AutenticacaoInterceptor } from './core/interceptors/autenticacao.interceptor';
 import { BuscaComponent } from './pages/busca/busca.component';
+import { PassagemComponent } from './shared/passagem/passagem.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { BuscaComponent } from './pages/busca/busca.component';
     CadastroComponent,
     PerfilComponent,
     TreeComponent,
-    BuscaComponent
+    BuscaComponent,
+    PassagemComponent
   ],
   imports: [
     BrowserModule,
