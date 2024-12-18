@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 
+interface OpcoesDeParada {
+  display: string,
+  value: string;
+}
+
 @Component({
   selector: 'app-paradas',
   templateUrl: './paradas.component.html',
@@ -33,6 +38,7 @@ export class ParadasComponent implements OnInit {
   constructor(private formBuscaService: FormBuscaService) {
     this.conexoesControl = this.formBuscaService.obterControle<number>('conexoes');
   }
+
   ngOnInit() {
     this.conexoesControl.valueChanges.subscribe(
       (value) => {

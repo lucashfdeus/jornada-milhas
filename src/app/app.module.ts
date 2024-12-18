@@ -20,6 +20,7 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatTreeModule } from '@angular/material/tree';
+import { MatSliderModule } from '@angular/material/slider';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -105,6 +106,7 @@ import { ParadasComponent } from './shared/form-busca/filtros-complementares/par
     MatRadioModule,
     MatDividerModule,
     MatCheckboxModule,
+    MatSliderModule,
     MatTreeModule
   ],
   providers: [{

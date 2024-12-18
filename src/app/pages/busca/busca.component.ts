@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 import { PassagensService } from 'src/app/core/services/passagens.service';
 import { DadosBusca, Passagem } from 'src/app/core/types/type';
@@ -12,13 +13,14 @@ export class BuscaComponent implements OnInit {
 
   passagens: Passagem[] = [];
 
-  constructor(private passagensService: PassagensService,
+  constructor(
+    private passagensService: PassagensService,
     private formBuscaService: FormBuscaService) { }
 
   ngOnInit(): void {
 
-    const buscaPadrao = {
-      data: new Date().toISOString,
+    const buscaPadrao: DadosBusca = {
+      dataIda: new Date().toISOString(),
       pagina: 1,
       porPagina: 25,
       somenteIda: false,
@@ -27,13 +29,20 @@ export class BuscaComponent implements OnInit {
     };
 
     const busca = this.formBuscaService.formEstaValido ? this.formBuscaService.obterDadosBusca() : buscaPadrao;
-    this.passagensService.getPassagens(busca).subscribe(
-      res => {
-        console.log(res);
-        this.passagens = res.resultado;
-      }
-    );
+
+    this.passagensService.getPassagens(busca)
+      .pipe(take(1))
+      .subscribe(
+        res => {
+          this.passagens = res.resultado;
+          this.formBuscaService.formBusca.patchValue({
+            precoMin: res.precoMin,
+            precoMax: res.precoMax,
+          });
+        }
+      );
   }
+
   busca(ev: DadosBusca) {
     this.passagensService.getPassagens(ev).subscribe(
       res => {
