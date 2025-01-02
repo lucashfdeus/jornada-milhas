@@ -147,4 +147,15 @@ export class FormBuscaService {
 
     return dadosBusca;
   }
+
+  resetarFiltros() {
+    this.formBusca.patchValue({
+      dataIda: new Date().toISOString(),
+      pagina: 1,
+      porPagina: 25,
+      somenteIda: false,
+      passageirosAdultos: 1,
+      tipo: 'Executiva'
+    });
+  }
 }

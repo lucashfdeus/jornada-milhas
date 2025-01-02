@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, take } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { DadosBusca, Resultado } from '../types/type';
+import { DadosBusca, Resultado, Passagem, Destaques } from '../types/type';
 
 @Injectable({
   providedIn: 'root'
@@ -39,5 +39,34 @@ export class PassagensService {
       })
       .join('&');
     return query;
+  }
+
+  obterPassagensDestaques(passagem: Passagem[]): Destaques | undefined {
+    if (!passagem.length) {
+      return undefined;
+    }
+
+    let ordenadoPorTempo = [...passagem].sort(
+      (a, b) => a.tempoVoo - b.tempoVoo
+    );
+
+    let ordernadoPorPreco = [...passagem].sort(
+      (a, b) => a.total - b.total
+    );
+
+    let maisRapida = ordenadoPorTempo[0];
+    let maisBarata = ordernadoPorPreco[0];
+
+    let ordernadoPorMedia = [...passagem].sort((a, b) => {
+      let pontuacaoA = (a.tempoVoo / maisBarata.tempoVoo + a.total / maisBarata.total) / 2;
+
+      let pontuacaoB = (b.tempoVoo / maisBarata.total + b.total / maisBarata.total) / 2;
+
+      return pontuacaoA - pontuacaoB;
+    });
+
+    let sugerida = ordernadoPorMedia[0];
+
+    return { maisRapida, maisBarata, sugerida };
   }
 }

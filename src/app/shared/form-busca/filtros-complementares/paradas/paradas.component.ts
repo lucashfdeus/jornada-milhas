@@ -42,7 +42,7 @@ export class ParadasComponent implements OnInit {
   ngOnInit() {
     this.conexoesControl.valueChanges.subscribe(
       (value) => {
-        if (!value) {
+        if (value === null) {
           this.opcoesSelecionada = null;
         }
       }
@@ -71,6 +71,7 @@ export class ParadasComponent implements OnInit {
     if (!this.opcoesSelecionada) {
       return false;
     }
+
     return this.opcoesSelecionada.value > opcao.value;
   }
 }

@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { take } from 'rxjs';
 import { FormBuscaService } from 'src/app/core/services/form-busca.service';
 import { PassagensService } from 'src/app/core/services/passagens.service';
-import { DadosBusca, Passagem } from 'src/app/core/types/type';
+import { DadosBusca, Destaques, Passagem } from 'src/app/core/types/type';
 
 @Component({
   selector: 'app-busca',
@@ -12,6 +12,7 @@ import { DadosBusca, Passagem } from 'src/app/core/types/type';
 export class BuscaComponent implements OnInit {
 
   passagens: Passagem[] = [];
+  destaques?: Destaques;
 
   constructor(
     private passagensService: PassagensService,
@@ -39,6 +40,7 @@ export class BuscaComponent implements OnInit {
             precoMin: res.precoMin,
             precoMax: res.precoMax,
           });
+          this.obterDestaques();
         }
       );
   }
@@ -49,5 +51,9 @@ export class BuscaComponent implements OnInit {
         console.log(res);
         this.passagens = res.resultado;
       });
+  }
+
+  obterDestaques() {
+    this.destaques = this.passagensService.obterPassagensDestaques(this.passagens);
   }
 }
