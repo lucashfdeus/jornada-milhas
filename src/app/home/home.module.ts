@@ -5,22 +5,24 @@ import { HomeComponent } from "./home.component";
 import { SharedModule } from "src/app/shared/shared.module";
 import { CommonModule } from "@angular/common";
 import { MaterialModule } from "src/app/core/material/material.module";
+import { HomeRoutingModule } from "./home-routing.module";
 
 @NgModule({
   declarations: [
-    PromocoesComponent,
     DepoimentosComponent,
-    HomeComponent
+    HomeComponent,
+    PromocoesComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
-    SharedModule
+    SharedModule,
+    HomeRoutingModule
   ],
   exports: [
-    PromocoesComponent,
     DepoimentosComponent,
-    HomeComponent
+    HomeComponent,
+    PromocoesComponent
   ]
 })
 export class HomeModule { }

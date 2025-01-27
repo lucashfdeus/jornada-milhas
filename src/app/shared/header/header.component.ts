@@ -9,13 +9,13 @@ import { UserService } from 'src/app/autenticacao/services/user.service';
 })
 export class HeaderComponent {
 
-  constructor(private userService: UserService,
+  constructor(
+    private userService: UserService,
     private router: Router) { }
 
   user$ = this.userService.retornarUser();
-
   logout() {
     this.userService.logout();
-    this, this.router.navigate(['/login']);
+    this.router.navigate(['auth/login']);
   }
 }

@@ -11,6 +11,7 @@ import { PassagemComponent } from './passagem/passagem.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../core/material/material.module';
 import { SharedModule } from '../shared/shared.module';
+import { BuscaRoutingModule } from "./busca-routing.module";
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     MaterialModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BuscaRoutingModule
   ],
   exports: [
     BuscaComponent,

@@ -1,40 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './autenticacao/login/login.component';
-import { CadastroComponent } from './autenticacao/cadastro/cadastro.component';
-import { PerfilComponent } from './autenticacao/perfil/perfil.component';
-import { TreeComponent } from './pages/tree/tree.component';
-//import { authGuard } from './core/guards/auth.guard'; uso do guard como classe.
-import { AuthGuard } from './autenticacao/auth.guard';
-import { BuscaComponent } from './busca/busca.component';
-import { HomeComponent } from './home/home.component';
-
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
+    path: 'auth',
+    loadChildren: () => import('./autenticacao/autenticacao.module').then(m => m.AutenticacaoModule)
   },
   {
-    path: 'login',
-    component: LoginComponent,
-  },
-  {
-    path: 'cadastro',
-    component: CadastroComponent,
-  },
-  {
-    path: 'perfil',
-    component: PerfilComponent,
-    canActivate: [AuthGuard]
-  }, {
     path: 'busca',
-    component: BuscaComponent
+    loadChildren: () => import('./busca/busca.module').then(m => m.BuscaModule)
   },
   {
-    path: 'tree',
-    component: TreeComponent,
+    path: '',
+    redirectTo: '/home',
+    pathMatch: 'full'
   },
+  {
+    path: '**',
+    redirectTo: '/pagina-nao-encontrada',
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({

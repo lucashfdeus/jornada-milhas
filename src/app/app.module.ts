@@ -10,10 +10,10 @@ import { AppComponent } from './app.component';
 import { AutenticacaoInterceptor } from './autenticacao/autenticacao.interceptor';
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
-import { AutenticacaoModule } from './autenticacao/autenticacao.module';
-import { HomeModule } from './home/home.module';
-import { BuscaModule } from './busca/busca.module';
 import { TreeComponent } from './pages/tree/tree.component';
+import { HomeRoutingModule } from './home/home-routing.module';
+import { ErroModule } from './core/erro/erro.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
@@ -23,14 +23,13 @@ import { TreeComponent } from './pages/tree/tree.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
     SharedModule,
     MaterialModule,
     HomeModule,
-    AutenticacaoModule,
-    BuscaModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    ErroModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
