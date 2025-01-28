@@ -1,8 +1,6 @@
 <header class="app-header">
   <mat-toolbar>
-    <a routerLink="/">
-      <img src="assets/imagens/logo.png" alt="Logo da aplicação Jornada">
-    </a>
+<img src="assets/imagens/logo.png" alt="Logo da aplicação Jornada" (click)="navigateToHome()" (keyup.enter)="navigateToHome()" tabindex="0">
     <span class="spacer"></span>
     <div class="links-toolbar">
       <button mat-button>Vender milhas</button>

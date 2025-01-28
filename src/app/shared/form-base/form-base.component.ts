@@ -22,8 +22,8 @@ export class FormBaseComponent implements OnInit {
   );
 
   @Input() perfilComponent = false;
-  @Input() titulo: string = 'Crie sua conta';
-  @Input() textoBotao: string = 'CADASTRAR';
+  @Input() titulo = 'Crie sua conta';
+  @Input() textoBotao = 'CADASTRAR';
 
   @Output() acaoClique: EventEmitter<any> = new EventEmitter<any>();
   @Output() sair: EventEmitter<any> = new EventEmitter<any>();

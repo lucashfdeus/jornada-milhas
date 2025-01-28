@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Promocao } from 'src/app/core/types/type';
 import { PromocaoService } from '../services/promocao.service';
 

@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
@@ -14,11 +16,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
   ]
 })
 export class SeletorPassageiroComponent implements ControlValueAccessor {
-  @Input() titulo: string = '';
-  @Input() subtitulo: string = '';
+  @Input() titulo = '';
+  @Input() subtitulo = '';
 
-  value: number = 0;
-
+  value = 0;
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   onchange = (value: number) => { };
 
   onTouch = () => { };

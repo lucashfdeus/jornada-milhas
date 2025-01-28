@@ -11,8 +11,8 @@ import { environment } from 'src/environments/environment';
 export class PassagensService {
 
   apiUrl: string = environment.apiUrl;
-  precoMin: number = 0;
-  precoMax: number = 0;
+  precoMin = 0;
+  precoMax = 0;
 
   constructor(private httpClient: HttpClient) { }
 
@@ -47,26 +47,26 @@ export class PassagensService {
       return undefined;
     }
 
-    let ordenadoPorTempo = [...passagem].sort(
+    const ordenadoPorTempo = [...passagem].sort(
       (a, b) => a.tempoVoo - b.tempoVoo
     );
 
-    let ordernadoPorPreco = [...passagem].sort(
+    const ordernadoPorPreco = [...passagem].sort(
       (a, b) => a.total - b.total
     );
 
-    let maisRapida = ordenadoPorTempo[0];
-    let maisBarata = ordernadoPorPreco[0];
+    const maisRapida = ordenadoPorTempo[0];
+    const maisBarata = ordernadoPorPreco[0];
 
-    let ordernadoPorMedia = [...passagem].sort((a, b) => {
-      let pontuacaoA = (a.tempoVoo / maisBarata.tempoVoo + a.total / maisBarata.total) / 2;
+    const ordernadoPorMedia = [...passagem].sort((a, b) => {
+      const pontuacaoA = (a.tempoVoo / maisBarata.tempoVoo + a.total / maisBarata.total) / 2;
 
-      let pontuacaoB = (b.tempoVoo / maisBarata.total + b.total / maisBarata.total) / 2;
+      const pontuacaoB = (b.tempoVoo / maisBarata.total + b.total / maisBarata.total) / 2;
 
       return pontuacaoA - pontuacaoB;
     });
 
-    let sugerida = ordernadoPorMedia[0];
+    const sugerida = ordernadoPorMedia[0];
 
     return { maisRapida, maisBarata, sugerida };
   }

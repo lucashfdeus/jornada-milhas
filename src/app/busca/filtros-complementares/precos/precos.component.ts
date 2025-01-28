@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormBuscaService } from 'src/app/shared/services/form-busca.service';
 import { PassagensService } from '../../services/passagens.service';

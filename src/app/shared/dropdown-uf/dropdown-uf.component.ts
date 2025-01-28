@@ -10,9 +10,9 @@ import { UnidadeFederativa } from 'src/app/core/types/type';
   styleUrls: ['./dropdown-uf.component.scss'],
 })
 export class DropdownUfComponent implements OnInit {
-  @Input() label: string = '';
-  @Input() iconePrefixo: string = '';
-  @Input() placeholder: string = '';
+  @Input() label = '';
+  @Input() iconePrefixo = '';
+  @Input() placeholder = '';
   @Input() control!: FormControl;
 
   unidadesFederativas: UnidadeFederativa[] = [];

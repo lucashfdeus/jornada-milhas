@@ -11,9 +11,9 @@ import { AutenticacaoInterceptor } from './autenticacao/autenticacao.interceptor
 import { SharedModule } from './shared/shared.module';
 import { MaterialModule } from './core/material/material.module';
 import { TreeComponent } from './pages/tree/tree.component';
-import { HomeRoutingModule } from './home/home-routing.module';
 import { ErroModule } from './core/erro/erro.module';
 import { HomeModule } from './home/home.module';
+import { ErrosInterceptor } from './core/erro/erros.interceptor';
 
 @NgModule({
   declarations: [
@@ -31,11 +31,18 @@ import { HomeModule } from './home/home.module';
     ReactiveFormsModule,
     ErroModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AutenticacaoInterceptor,
-    multi: true
-  }],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AutenticacaoInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: ErrosInterceptor,
+      multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -13,6 +13,10 @@ export class HeaderComponent {
     private userService: UserService,
     private router: Router) { }
 
+  navigateToHome() {
+    this.router.navigate(['/']);
+  }
+
   user$ = this.userService.retornarUser();
   logout() {
     this.userService.logout();

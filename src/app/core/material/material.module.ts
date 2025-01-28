@@ -16,6 +16,8 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatSliderModule } from "@angular/material/slider";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatTreeModule } from "@angular/material/tree";
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { MatTreeModule } from "@angular/material/tree";
     MatDividerModule,
     MatCheckboxModule,
     MatSliderModule,
-    MatTreeModule
+    MatTreeModule,
+    MatSnackBarModule
   ]
 })
 export class MaterialModule { }

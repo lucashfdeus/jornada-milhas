@@ -15,7 +15,7 @@ export class HomeComponent implements OnInit {
       .subscribe();
   }
 
-  navegarParaBusca(event: any) {
+  navegarParaBusca() {
     this.router.navigate(['busca']);
   }
 }

@@ -5,9 +5,6 @@ import { PersonNode } from 'src/app/core/types/type'; // Certifique-se de que o 
   providedIn: 'root'
 })
 export class TreeService {
-
-  constructor() { }
-
   getTree(): PersonNode[] {
     // Retornando dados de exemplo ou de um backend
     return [
