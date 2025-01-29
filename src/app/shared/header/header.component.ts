@@ -22,4 +22,12 @@ export class HeaderComponent {
     this.userService.logout();
     this.router.navigate(['auth/login']);
   }
+
+  navegarParaCadastro() {
+    this.router.navigate(['auth/cadastro']);
+  }
+
+  navegarParaLogin() {
+    this.router.navigate(['auth/login']);
+  }
 }

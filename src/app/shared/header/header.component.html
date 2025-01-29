@@ -1,6 +1,7 @@
 <header class="app-header">
   <mat-toolbar>
-<img src="assets/imagens/logo.png" alt="Logo da aplicação Jornada" (click)="navigateToHome()" (keyup.enter)="navigateToHome()" tabindex="0">
+    <img src="assets/imagens/logo.png" alt="Logo da aplicação Jornada" (click)="navigateToHome()"
+      (keyup.enter)="navigateToHome()" tabindex="0">
     <span class="spacer"></span>
     <div class="links-toolbar">
       <button mat-button>Vender milhas</button>
@@ -9,13 +10,12 @@
         <a routerLink="auth/perfil">
           <img src="assets/icones/user.png" alt="Ícone da pessoa usuária">
         </a>
-        <button mat-stroked-button color="primary"
-          (click)="logout()">SAIR</button>
+        <button mat-stroked-button color="primary" (click)="logout()">SAIR</button>
       </ng-container>
       <ng-template #login>
-        <button routerLink="auth/cadastro" mat-raised-button
-          color="primary">CADASTRE-SE</button>
-        <button routerLink="auth/login" mat-stroked-button>LOGIN</button>
+        <!-- <button routerLink="auth/cadastro" mat-raised-button color="primary">CADASTRE-SE</button> -->
+        <button (click)="navegarParaCadastro()" mat-raised-button color="primary">CADASTRE-SE</button>
+        <button (click)="navegarParaLogin()" mat-stroked-button>LOGIN</button>
       </ng-template>
     </div>
   </mat-toolbar>
